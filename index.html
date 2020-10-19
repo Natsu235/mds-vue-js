@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Mon Titre</h1>
+        <span>Mon Message Normal : </span><span><b>"{{ message }}"</b><br></span>
+        <span>Mon Message Majuscule : </span><span><b>"{{ messageUpperCase }}"</b><br></span>
+        <button onClick="app.messageReverse()">Reverse Message</button>
+    </div>
+    <script type="text/javascript">
+    var app = new Vue({
+        el: "#app",
+        data: {
+          message: 'Ceci est un message.'
+        },
+        computed: {
+          messageUpperCase: function () {
+              return this.message.toUpperCase();
+          }
+        },
+        methods: {
+            messageReverse: function (message) {
+              console.log(this.message.split('').reverse().join(''));
+          }
+        }
+      })
+    </script>
+</body>
+</html>
