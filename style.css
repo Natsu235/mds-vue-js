@@ -1,1 +1,3 @@
-/* Empty because Bootstrap is used. */
+.flex-50 {
+    flex: 0 0 45%;
+}
